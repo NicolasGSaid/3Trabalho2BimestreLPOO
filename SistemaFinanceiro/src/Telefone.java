@@ -1,4 +1,5 @@
 import com.github.javafaker.Faker;
+import java.util.Scanner;
 
 public class Telefone {
     private static final Faker faker = new Faker();
@@ -9,6 +10,15 @@ public class Telefone {
     public Telefone() {
         this.ddd = faker.number().numberBetween(10, 99);
         this.numero = Long.parseLong(faker.phoneNumber().subscriberNumber(8));
+    }
+    
+    public Telefone(Scanner scanner) {
+        System.out.println("Digite o DDD: ");
+        this.ddd = scanner.nextInt();
+        scanner.nextLine();
+        System.out.println("Digite o Numero: ");
+        this.numero = scanner.nextLong();
+        scanner.nextLine();
     }
 
     // Getters

@@ -25,12 +25,4 @@ public class Cliente extends PessoaJuridica {
     public void setEnderecoCobranca(Endereco enderecoCobranca) {
         this.enderecoCobranca = enderecoCobranca;
     }
-
-    @Override
-    public void mostrarDados() {
-        super.mostrarDados(); 
-        System.out.println("Limite de Crédito: " + limiteCredito);
-        System.out.println("Endereço de Cobrança: ");
-        enderecoCobranca.mostrarEndereco(); 
-    }
 }

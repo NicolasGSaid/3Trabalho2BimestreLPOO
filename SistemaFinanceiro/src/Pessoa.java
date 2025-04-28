@@ -1,5 +1,6 @@
 
 import com.github.javafaker.Faker;
+import java.util.Scanner;
 
 public abstract class Pessoa {
     protected static final Faker faker = new Faker();
@@ -18,12 +19,25 @@ public abstract class Pessoa {
         this.telefone = new Telefone();
     }
     
-    public void mostrarDados(){
-        System.out.println("ID: " + id);
-        System.out.println("Nome: " + nome);
-        System.out.println("Email: "+ email);
-        System.out.println("Endereço: " + endereco);
-        System.out.println("Telefone: " + telefone);                
+    public Pessoa(){
+        Scanner scanner = new Scanner(System.in); 
+        this.id = -1;
+        this.nome = "";
+        this.email = "";
+        this.endereco = new Endereco("", "", "", "", "", "", 0); 
+        this.telefone = new Telefone(scanner); 
+    }
+    
+    public void entrar(Scanner input){
+        System.out.print("Digite o ID:");
+        this.id = input.nextInt();
+        input.nextLine();
+        System.out.print("Digite o nome:");
+        this.nome = input.nextLine();
+        System.out.print("Digite o email:");
+        this.email = input.nextLine();
+        this.endereco.incluir(input);
+        //this.telefone.entrar(input);  
     }
     
         // Getters

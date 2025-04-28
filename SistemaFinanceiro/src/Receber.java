@@ -4,7 +4,7 @@ public class Receber extends Financeiro {
 
     public Receber(int id) {
         super(id);
-        this.cliente = new Cliente(); // Instancia com dados faker
+        this.cliente = new Cliente(faker.number().numberBetween(1, 1000)); // Exemplo de id gerado aleatoriamente
         this.notaFiscal = "NF-" + faker.number().numberBetween(100000, 999999);
     }
 
@@ -22,13 +22,5 @@ public class Receber extends Financeiro {
 
     public void setNotaFiscal(String notaFiscal) {
         this.notaFiscal = notaFiscal;
-    }
-
-    @Override
-    public void mostrarDados() {
-        super.mostrarDados();
-        System.out.println("Nota Fiscal: " + notaFiscal);
-        System.out.println("Cliente: ");
-        cliente.mostrarDados(); // Método da classe Cliente
     }
 }

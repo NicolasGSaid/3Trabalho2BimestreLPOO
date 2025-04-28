@@ -35,12 +35,4 @@ public class Fornecedor extends PessoaJuridica {
     public void setSite(String site) {
         this.site = site;
     }
-
-    @Override
-    public void mostrarDados() {
-        super.mostrarDados(); 
-        System.out.println("Limite de Compra: " + limiteCompra);
-        System.out.println("Data de Cadastro: " + dataCadastro);
-        System.out.println("Site: " + site);
-    }
 }

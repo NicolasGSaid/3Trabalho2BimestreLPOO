@@ -4,14 +4,21 @@ public abstract class PessoaJuridica extends Pessoa{
     protected String cnpj, inscricaoEstadual, contato;
     
       public PessoaJuridica(int id) {
-        super(id);  // Chama o construtor da classe mãe (Pessoa)
+        super(id);  
         this.cnpj = faker.company().name();
-        this.inscricaoEstadual = faker.company().industry();  // 
+        this.inscricaoEstadual = faker.company().industry();   
         this.contato = faker.phoneNumber().cellPhone();  
       }
       
+      public PessoaJuridica(String cnpj, String inscricaoEstadual, String contato) {
+        super(0);  
+        this.cnpj = cnpj;
+        this.inscricaoEstadual = inscricaoEstadual;
+        this.contato = contato;
+      }
+      
     // Getters
-    public String getCnpj() {
+    public String getCnpj(){
         return cnpj;
     }
 
@@ -34,13 +41,5 @@ public abstract class PessoaJuridica extends Pessoa{
 
     public void setContato(String contato) {
         this.contato = contato;
-    }
-
-    @Override
-    public void mostrarDados() {
-        super.mostrarDados();  // Chama o método da classe mãe
-        System.out.println("CNPJ: " + cnpj);
-        System.out.println("Inscrição Estadual: " + inscricaoEstadual);
-        System.out.println("Contato: " + contato);
     }
 }
