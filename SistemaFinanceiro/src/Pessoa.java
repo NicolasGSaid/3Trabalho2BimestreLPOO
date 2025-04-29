@@ -25,7 +25,7 @@ public abstract class Pessoa {
         this.nome = "";
         this.email = "";
         this.endereco = new Endereco("", "", "", "", "", "", 0); 
-        this.telefone = new Telefone(scanner); 
+        this.telefone = new Telefone(0, 0); 
     }
     
     public void entrar(Scanner input){
@@ -37,7 +37,7 @@ public abstract class Pessoa {
         System.out.print("Digite o email:");
         this.email = input.nextLine();
         this.endereco.incluir(input);
-        //this.telefone.entrar(input);  
+        this.telefone.incluir(input);  
     }
     
         // Getters

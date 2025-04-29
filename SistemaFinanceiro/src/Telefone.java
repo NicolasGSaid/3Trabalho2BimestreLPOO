@@ -12,13 +12,19 @@ public class Telefone {
         this.numero = Long.parseLong(faker.phoneNumber().subscriberNumber(8));
     }
     
-    public Telefone(Scanner scanner) {
-        System.out.println("Digite o DDD: ");
-        this.ddd = scanner.nextInt();
+    public Telefone(int ddd, long numero) {
+        this.ddd = 0;
+        this.numero = 0;
+    }
+    
+    public void incluir(Scanner scanner){
+        System.out.print("Digite o DDD: ");
+        scanner.nextInt();
         scanner.nextLine();
-        System.out.println("Digite o Numero: ");
-        this.numero = scanner.nextLong();
+        System.out.print("Digite o Número: ");
+        scanner.nextLong();
         scanner.nextLine();
+    
     }
 
     // Getters

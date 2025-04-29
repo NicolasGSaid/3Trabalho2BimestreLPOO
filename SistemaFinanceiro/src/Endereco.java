@@ -38,7 +38,6 @@ public class Endereco{
             this.cidade = scanner.nextLine();
             System.out.print("Digite o número: ");
             this.numero = scanner.nextLine();
-            scanner.nextLine();
             System.out.print("Digite o CEP: ");
             this.cep = scanner.nextInt();
             scanner.nextLine();
