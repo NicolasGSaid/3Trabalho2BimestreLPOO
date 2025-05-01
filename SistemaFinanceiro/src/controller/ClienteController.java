@@ -97,7 +97,6 @@ public class ClienteController implements InterfaceController {
 
         cliente.setEnderecoCobranca(enderecoCobranca);
 
-        // Definindo o ID do cliente
         cliente.setId(clientes.size() + 1);
 
         clientes.add(cliente);
