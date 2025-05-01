@@ -10,12 +10,7 @@ public class MenuFuncionario implements MenuInterface {
     FuncionarioController funcionarioController = new FuncionarioController();
     
     public void executarMenuFuncionario() {
-        
-        for (int i = 1; i <= 2; i++) {
-        FuncionarioModel funcionario = FuncionarioFaker.gerarFuncionario(i);
-        funcionarios.add(funcionario);
-    }
-        
+              
         while (opcaoSecundaria != 5) {
             System.out.println("\n----- Menu de Funcionários -----");
             System.out.println("1. Incluir Funcionário");

@@ -1,10 +1,13 @@
 package View;
 
-import java.util.Scanner;
+import faker.FuncionarioFaker;
+import java.util.ArrayList;
+import model.FuncionarioModel;
 
 public class MenuPrincipal implements MenuInterface {
     int opcao = 0;
-    Scanner scanner = new Scanner(System.in); // Inicialização do scanner
+    ArrayList<FuncionarioModel> funcionarios = new ArrayList<>();
+
 
     public int menuPrincipal(){
         System.out.println("1. Cadastro De Funcionarios");
@@ -19,8 +22,14 @@ public class MenuPrincipal implements MenuInterface {
         return opcao;
     }
     
-
     public void executarMenu(){
+        
+        for (int i = 1; i <= 2; i++) {
+
+            FuncionarioModel funcionario = FuncionarioFaker.gerarFuncionario(i);
+            funcionarios.add(funcionario);
+        } 
+        
         while (opcao != 7) {
             opcao = menuPrincipal();
             
@@ -37,14 +46,18 @@ public class MenuPrincipal implements MenuInterface {
                     break;
                 case 3:
                     System.out.println("Você escolheu Cadastro de Fornecedores.");
-//                    MenuFornecedor menuFornecedor = new MenuFornecedor();
-//                    menuFornecedor.menuFornecedor();
+                    MenuFornecedor menuFornecedor = new MenuFornecedor();
+                    menuFornecedor.menuFornecedor();
                     break;
                 case 4:
                     System.out.println("Cadastro de Créditos.");
+                    MenuPagar menuPagar = new MenuPagar();
+                    menuPagar.menuPagar();
                     break;
                 case 5:
                     System.out.println("Cadastro de Débitos.");
+                    MenuReceber menuReceber = new MenuReceber();
+                    menuReceber.menuReceber();
                     break;
                 case 6:
                     System.out.println("Fluxo de Caixa.");
