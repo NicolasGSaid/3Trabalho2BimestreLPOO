@@ -2,7 +2,6 @@ package faker;
 
 import com.github.javafaker.Faker;
 import java.util.Locale;
-import java.util.Random;
 import model.EnderecoModel;
 import model.FornecedorModel;
 import model.TelefoneModel;
@@ -10,9 +9,8 @@ import model.TelefoneModel;
 public class FornecedorFaker {
     
     private static final Faker faker = new Faker(new Locale("pt-BR"));
-    private static final Random random = new Random();
     
-    public static FornecedorModel gerarFornecedorFake() {
+    public static FornecedorModel gerarFornecedor() {
         int id = faker.number().numberBetween(1, 9999);
         String nome = faker.company().name();
         String email = faker.internet().emailAddress();
@@ -23,22 +21,9 @@ public class FornecedorFaker {
         String dataCadastro = faker.date().birthday().toString(); 
         String site = faker.internet().url();
 
-        // Endereço
-        EnderecoModel endereco = new EnderecoModel(
-            faker.address().streetName(),
-            String.valueOf(faker.number().numberBetween(1, 1000)),
-            faker.address().secondaryAddress(),
-            faker.address().cityName(),
-            faker.address().city(),
-            faker.address().state(),
-            faker.number().numberBetween(10000000, 99999999)
-        );
-
-        // Telefone
-        TelefoneModel telefone = new TelefoneModel(
-            faker.number().numberBetween(11, 99),
-            faker.number().numberBetween(900000000L, 999999999L)
-        );
+        // Utilizando os fakers especializados
+        EnderecoModel endereco = EnderecoFaker.gerar();
+        TelefoneModel telefone = TelefoneFaker.gerar();
 
         return new FornecedorModel(
             limiteCompra,

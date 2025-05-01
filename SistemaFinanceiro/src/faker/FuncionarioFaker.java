@@ -12,20 +12,8 @@ public class FuncionarioFaker {
     private static final Faker faker = new Faker(new Locale("pt-BR"));
 
     public static FuncionarioModel gerarFuncionario(int id) {
-        EnderecoModel endereco = new EnderecoModel(
-            faker.address().streetName(),
-            faker.address().buildingNumber(),
-            faker.address().secondaryAddress(),
-            faker.address().cityName(),
-            faker.address().cityName(),
-            faker.address().stateAbbr(),
-            faker.number().numberBetween(10000000, 99999999)
-        );
-
-        TelefoneModel telefone = new TelefoneModel(
-            faker.number().numberBetween(11, 99), // DDD
-            faker.number().numberBetween(900000000L, 999999999L) // número
-        );
+        EnderecoModel endereco = EnderecoFaker.gerar();
+        TelefoneModel telefone = TelefoneFaker.gerar();
 
         String nome = faker.name().fullName();
         String email = faker.internet().emailAddress();
@@ -36,9 +24,11 @@ public class FuncionarioFaker {
         String ctps = String.valueOf(faker.number().numberBetween(100000, 999999));
         double salario = ThreadLocalRandom.current().nextDouble(1200.0, 9000.0);
 
-        String dataAdmissao = faker.date().past(1000, java.util.concurrent.TimeUnit.DAYS)
-                                    .toInstant().toString().substring(0, 10);
-        String dataDemissao = ""; 
+        String dataAdmissao = faker.date()
+            .past(1000, java.util.concurrent.TimeUnit.DAYS)
+            .toInstant().toString().substring(0, 10);
+
+        String dataDemissao = ""; // Funcionário ativo por padrão
 
         return new FuncionarioModel(
             dataAdmissao,
