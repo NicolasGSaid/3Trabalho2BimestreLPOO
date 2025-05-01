@@ -2,13 +2,11 @@ package View;
 
 import controller.FuncionarioController;
 import faker.FuncionarioFaker;
-import java.util.ArrayList;
 import model.FuncionarioModel;
 
 public class MenuFuncionario implements MenuInterface {
 
     int opcaoSecundaria = 0;
-    ArrayList<FuncionarioModel> funcionarios = new ArrayList<>();    
     FuncionarioController funcionarioController = new FuncionarioController();
     
     public void executarMenuFuncionario() {
