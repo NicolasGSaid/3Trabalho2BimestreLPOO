@@ -2,7 +2,7 @@ package View;
 
 import controller.FuncionarioController;
 import faker.FuncionarioFaker;
-import model.FuncionarioModel;
+
 
 public class MenuFuncionario implements MenuInterface {
 
@@ -10,6 +10,10 @@ public class MenuFuncionario implements MenuInterface {
     FuncionarioController funcionarioController = new FuncionarioController();
     
     public void executarMenuFuncionario() {
+        
+        for (int i = 1; i <= 5; i++) {
+            funcionarioController.incluir(FuncionarioFaker.gerarFuncionario(i));
+        }
               
         while (opcaoSecundaria != 5) {
             System.out.println("\n----- Menu de Funcionários -----");

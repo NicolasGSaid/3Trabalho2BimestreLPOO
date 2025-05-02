@@ -80,6 +80,11 @@ public class FornecedorController implements InterfaceController {
 
         System.out.println("Fornecedor cadastrado com sucesso!");
     }
+    
+     public void incluir(FornecedorModel fornecedor) {
+        fornecedores.add(fornecedor);
+        System.out.println("Fornecedor cadastrado com sucesso!");
+     }
 
     @Override
     public void alterar() {

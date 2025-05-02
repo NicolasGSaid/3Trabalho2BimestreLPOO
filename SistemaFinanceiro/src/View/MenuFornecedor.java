@@ -1,14 +1,20 @@
 package View;
 
-import controller.FornecedorController;  
+import controller.FornecedorController; 
+import faker.FornecedorFaker;
 
 public class MenuFornecedor implements MenuInterface {
     
     int opcaoSecundaria = 0;
     
-    FornecedorController fornecedorController = new FornecedorController();  
+    FornecedorController fornecedorController = new FornecedorController();
 
-    public void menuFornecedor() {  
+    public void menuFornecedor() { 
+        
+        for (int i = 1; i <= 5; i++) {
+            fornecedorController.incluir(FornecedorFaker.gerarFornecedor());
+        }
+        
         while(opcaoSecundaria != 5) {
             System.out.println("\n----- Menu de Fornecedores -----");  
             System.out.println("1. Incluir Fornecedor");  

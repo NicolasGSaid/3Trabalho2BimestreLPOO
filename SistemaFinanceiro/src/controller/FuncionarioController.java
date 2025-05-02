@@ -83,6 +83,11 @@ public class FuncionarioController implements InterfaceController {
 
         System.out.println("Funcionário cadastrado com sucesso!");
     }
+    
+    public void incluir(FuncionarioModel funcionario) {
+        funcionarios.add(funcionario);
+     }
+    
 
     @Override
     public void alterar() {

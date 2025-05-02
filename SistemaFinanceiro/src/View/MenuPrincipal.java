@@ -1,13 +1,7 @@
 package View;
 
-import faker.FuncionarioFaker;
-import java.util.ArrayList;
-import model.FuncionarioModel;
-
 public class MenuPrincipal implements MenuInterface {
     int opcao = 0;
-    ArrayList<FuncionarioModel> funcionarios = new ArrayList<>();
-
 
     public int menuPrincipal(){
         System.out.println("1. Cadastro De Funcionarios");
@@ -23,13 +17,7 @@ public class MenuPrincipal implements MenuInterface {
     }
     
     public void executarMenu(){
-        
-        for (int i = 1; i <= 2; i++) {
-
-            FuncionarioModel funcionario = FuncionarioFaker.gerarFuncionario(i);
-            funcionarios.add(funcionario);
-        } 
-        
+                   
         while (opcao != 7) {
             opcao = menuPrincipal();
             
@@ -61,6 +49,8 @@ public class MenuPrincipal implements MenuInterface {
                     break;
                 case 6:
                     System.out.println("Fluxo de Caixa.");
+                    MenuFluxoCaixa menuCaixa = new MenuFluxoCaixa(); 
+                    menuCaixa.menuFluxoCaixa();
                     break;
                 case 7:
                     System.out.println("Saindo...");

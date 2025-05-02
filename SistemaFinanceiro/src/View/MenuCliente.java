@@ -1,6 +1,7 @@
 package View;
 
 import controller.ClienteController;  
+import faker.ClienteFaker;
 
 public class MenuCliente implements MenuInterface {
     
@@ -8,7 +9,12 @@ public class MenuCliente implements MenuInterface {
     
     ClienteController clienteController = new ClienteController();  
 
-    public void menuCliente() {  
+    public void menuCliente() {
+        
+        for (int i = 1; i <= 5; i++) {
+            clienteController.incluir(ClienteFaker.gerarCliente());
+        }
+        
         while(opcaoSecundaria != 5) {
             System.out.println("\n----- Menu de Clientes -----");  
             System.out.println("1. Incluir Cliente");  

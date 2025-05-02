@@ -103,6 +103,11 @@ public class ClienteController implements InterfaceController {
 
         System.out.println("Cliente cadastrado com sucesso!");
     }
+    
+    public void incluir(ClienteModel cliente) {
+        clientes.add(cliente);
+        System.out.println("Cliente cadastrado com sucesso!");
+     }
 
     @Override
     public void alterar() {

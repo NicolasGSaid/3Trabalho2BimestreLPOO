@@ -1,6 +1,7 @@
 package View;
 
 import controller.PagarController;  
+import faker.PagarFaker;
 
 public class MenuPagar implements MenuInterface {
     
@@ -8,7 +9,12 @@ public class MenuPagar implements MenuInterface {
     
     PagarController pagarController = new PagarController();  
 
-    public void menuPagar() {  
+    public void menuPagar() {
+        
+        for (int i = 1; i <= 5; i++) {
+            pagarController.incluir(PagarFaker.gerarPagar());
+        }
+        
         while(opcaoSecundaria != 5) {
             System.out.println("\n----- Menu de Pagamentos -----");  
             System.out.println("1. Incluir Pagamento");  

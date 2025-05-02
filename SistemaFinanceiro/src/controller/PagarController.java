@@ -56,6 +56,10 @@ public class PagarController implements InterfaceController {
         contasPagar.add(pagar);
         System.out.println("Conta a pagar cadastrada com sucesso!");
     }
+    
+    public void incluir(PagarModel pagar) {
+        contasPagar.add(pagar);
+     }
 
     @Override
     public void alterar() {

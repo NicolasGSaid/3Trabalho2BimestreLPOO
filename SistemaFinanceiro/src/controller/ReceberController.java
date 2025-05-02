@@ -56,6 +56,11 @@ public class ReceberController implements InterfaceController {
         recebimentos.add(receber);
         System.out.println("Recebimento cadastrado com sucesso!");
     }
+    
+    public void incluir(ReceberModel receber) {
+        recebimentos.add(receber);
+    }
+
 
     @Override
     public void alterar() {

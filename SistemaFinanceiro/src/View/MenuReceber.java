@@ -1,6 +1,7 @@
 package View;
 
 import controller.ReceberController;  
+import faker.ReceberFaker;
 
 public class MenuReceber implements MenuInterface {
     
@@ -8,7 +9,12 @@ public class MenuReceber implements MenuInterface {
     
     ReceberController receberController = new ReceberController();  
 
-    public void menuReceber() {  
+    public void menuReceber() {
+        
+        for (int i = 1; i <= 5; i++) {
+            receberController.incluir(ReceberFaker.gerarReceber());
+        }
+        
         while(opcaoSecundaria != 5) {
             System.out.println("\n----- Menu de Recebimentos -----");  
             System.out.println("1. Incluir Recebimento");  
