@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/3Trabalho2BimestreLPOO.iml" filepath="$PROJECT_DIR$/.idea/3Trabalho2BimestreLPOO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AulaSwing/AulaSwing.iml" filepath="$PROJECT_DIR$/AulaSwing/AulaSwing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SistemaFinanceiro/SistemaFinanceiro.iml" filepath="$PROJECT_DIR$/SistemaFinanceiro/SistemaFinanceiro.iml" />
+    </modules>
+  </component>
+</project>
